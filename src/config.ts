@@ -1,5 +1,5 @@
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config()
 
-export const { PORT, DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
+export const { PORT, DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env

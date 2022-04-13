@@ -1,7 +1,7 @@
-import query from "@/db";
+import query from '@/db'
 export default class HomeService {
   hello = async () => {
-    const res = await query("SELECT *  FROM emp");
-    return res;
-  };
+    const res = await query('SELECT *  FROM emp')
+    return res
+  }
 }
