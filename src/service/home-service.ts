@@ -1,5 +1,7 @@
+import query from "@/db";
 export default class HomeService {
-  hello = () => {
-    return new Promise(resolve => resolve('hello world'));
-  }
+  hello = async () => {
+    const res = await query("SELECT *  FROM emp");
+    return res;
+  };
 }

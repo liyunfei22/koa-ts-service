@@ -5,9 +5,7 @@ import { PORT } from "./config";
 import AppRoutes from "./routes";
 const app = new Koa();
 const router = new Router();
-router.get("/", (req, res) => {});
-import logger from "@/log";
-logger.error("eee");
+
 //路由
 AppRoutes.forEach((route) => {
   (router as any)[route.method](route.path, route.action);
