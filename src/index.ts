@@ -1,13 +1,17 @@
-import * as Koa from "koa";
-import * as Router from "koa-router";
-import * as bodyParser from "koa-bodyparser";
+import Koa from "koa";
+import Router from "koa-router";
+import bodyParser from "koa-bodyparser";
 import { PORT } from "./config";
 import AppRoutes from "./routes";
 const app = new Koa();
 const router = new Router();
-
+router.get("/", (req, res) => {});
+import logger from "@/log";
+logger.error("eee");
 //路由
-AppRoutes.forEach((route) => router[route.method](route.path, route.action));
+AppRoutes.forEach((route) => {
+  (router as any)[route.method](route.path, route.action);
+});
 
 app.use(bodyParser());
 app.use(router.routes());

@@ -4,6 +4,7 @@ specifiers:
   '@types/koa': ^2.0.48
   '@types/koa-bodyparser': ^4.2.2
   '@types/koa-router': ^7.0.40
+  '@types/log4js': ^2.3.5
   '@types/node': ^12.0.0
   '@typescript-eslint/eslint-plugin': ^5.18.0
   '@typescript-eslint/parser': ^5.18.0
@@ -13,9 +14,10 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   husky: ^7.0.4
   koa: ^2.7.0
-  koa-bodyparser: ^4.2.1
+  koa-bodyparser: ^4.3.0
   koa-router: ^7.4.0
   lint-staged: ^12.3.7
+  log4js: ^6.4.4
   nodemon: ^1.19.0
   pm2: ^3.5.0
   prettier: ^2.6.2
@@ -28,11 +30,13 @@ dependencies:
   koa: 2.13.4
   koa-bodyparser: 4.3.0
   koa-router: 7.4.0
+  log4js: 6.4.4
 
 devDependencies:
   '@types/koa': 2.13.4
   '@types/koa-bodyparser': 4.3.7
   '@types/koa-router': 7.4.4
+  '@types/log4js': 2.3.5
   '@types/node': 12.20.47
   '@typescript-eslint/eslint-plugin': 5.19.0_8b1f88629e18438afb93e6f86d2c5596
   '@typescript-eslint/parser': 5.19.0_eslint@8.13.0+typescript@3.9.10
@@ -298,6 +302,15 @@ packages:
       '@types/keygrip': 1.0.2
       '@types/koa-compose': 3.2.5
       '@types/node': 12.20.47
+    dev: true
+
+  /@types/log4js/2.3.5:
+    resolution: {integrity: sha512-SwF8LkSHqHy9A8GQ67NAYJiGl8zzP4Qtx65Wa+IOxDGdMHxKeoQZjg7m2M1erIT6VK0DYHpu2aTbdLkdkuMHjw==}
+    deprecated: This is a stub types definition for log4js (https://github.com/nomiddlename/log4js-node). log4js provides its own type definitions, so you don't need @types/log4js installed!
+    dependencies:
+      log4js: 6.4.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@types/mime/1.3.2:
@@ -1083,6 +1096,10 @@ packages:
     resolution: {integrity: sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==}
     dev: true
 
+  /date-format/4.0.6:
+    resolution: {integrity: sha512-B9vvg5rHuQ8cbUXE/RMWMyX2YA5TecT3jKF5fLtGNlzPlU7zblSPmAm2OImDbWL+LDOQ6pUm+4LOFz+ywS41Zw==}
+    engines: {node: '>=4.0'}
+
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     dependencies:
@@ -1621,7 +1638,6 @@ packages:
 
   /flatted/3.2.5:
     resolution: {integrity: sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==}
-    dev: true
 
   /follow-redirects/1.5.10:
     resolution: {integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==}
@@ -1646,6 +1662,14 @@ packages:
     resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=}
     engines: {node: '>= 0.6'}
     dev: false
+
+  /fs-extra/10.0.1:
+    resolution: {integrity: sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 6.1.0
+      universalify: 2.0.0
 
   /fs.realpath/1.0.0:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
@@ -1797,7 +1821,6 @@ packages:
 
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
-    dev: true
 
   /has-ansi/2.0.0:
     resolution: {integrity: sha1-NPUEnOHs3ysGSa8+8k5F7TVBbZE=}
@@ -2233,6 +2256,13 @@ packages:
       minimist: 1.2.6
     dev: true
 
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.10
+
   /keygrip/1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
     engines: {node: '>= 0.6'}
@@ -2446,6 +2476,18 @@ packages:
       slice-ansi: 4.0.0
       wrap-ansi: 6.2.0
     dev: true
+
+  /log4js/6.4.4:
+    resolution: {integrity: sha512-ncaWPsuw9Vl1CKA406hVnJLGQKy1OHx6buk8J4rE2lVW+NW5Y82G5/DIloO7NkqLOUtNPEANaWC1kZYVjXssPw==}
+    engines: {node: '>=8.0'}
+    dependencies:
+      date-format: 4.0.6
+      debug: 4.3.4
+      flatted: 3.2.5
+      rfdc: 1.3.0
+      streamroller: 3.0.6
+    transitivePeerDependencies:
+      - supports-color
 
   /lowercase-keys/1.0.1:
     resolution: {integrity: sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0JTG4icfZQH+xPyh8VA==}
@@ -3232,7 +3274,6 @@ packages:
 
   /rfdc/1.3.0:
     resolution: {integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==}
-    dev: true
 
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
@@ -3507,6 +3548,16 @@ packages:
   /statuses/2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
+
+  /streamroller/3.0.6:
+    resolution: {integrity: sha512-Qz32plKq/MZywYyhEatxyYc8vs994Gz0Hu2MSYXXLD233UyPeIeRBZARIIGwFer4Mdb8r3Y2UqKkgyDghM6QCg==}
+    engines: {node: '>=8.0'}
+    dependencies:
+      date-format: 4.0.6
+      debug: 4.3.4
+      fs-extra: 10.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /string-argv/0.3.1:
     resolution: {integrity: sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==}
@@ -3812,6 +3863,10 @@ packages:
     dependencies:
       crypto-random-string: 1.0.0
     dev: true
+
+  /universalify/2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
 
   /unpipe/1.0.0:
     resolution: {integrity: sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=}
