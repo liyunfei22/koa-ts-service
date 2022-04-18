@@ -19,6 +19,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/koa-compose": "^3.2.5",
     "dotenv": "^8.2.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.3.0",
@@ -38,7 +40,9 @@
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "glob": "^8.0.1",
     "husky": "^7.0.4",
+    "koa-compose": "^4.1.0",
     "lint-staged": "^12.3.7",
     "nodemon": "^1.19.0",
     "pm2": "^3.5.0",
