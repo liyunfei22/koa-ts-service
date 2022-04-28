@@ -1,4 +1,4 @@
-import { configure, getLogger } from 'log4js'
+import { configure, getLogger } from 'log4js';
 
 configure({
   appenders: {
@@ -8,9 +8,9 @@ configure({
   categories: {
     default: { appenders: ['app', 'out'], level: 'debug' },
   },
-})
+});
 // 指定类别
-const logger = getLogger()
+const logger = getLogger();
 // 设置级别 default level is OFF
 // logger.level = "debug";
 
@@ -22,4 +22,4 @@ const logger = getLogger()
 // logger.mark("time", new Date());
 
 // logger.warn("time", new Date());
-export default logger
+export default logger;

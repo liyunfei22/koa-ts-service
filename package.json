@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "start": "nodemon",
+    "dev": "nodemon",
     "build": "rm -rf dist && tsc",
     "start:prod": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js",
     "pro": "npx pm2 start ecosystem.config.js --env production",
