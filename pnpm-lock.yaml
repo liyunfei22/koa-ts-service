@@ -1,11 +1,13 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@koa/cors': ^3.3.0
   '@types/glob': ^7.2.0
   '@types/koa': ^2.0.48
   '@types/koa-bodyparser': ^4.2.2
   '@types/koa-compose': ^3.2.5
   '@types/koa-router': ^7.0.40
+  '@types/koa__cors': ^3.3.0
   '@types/log4js': ^2.3.5
   '@types/mysql': ^2.15.21
   '@types/node': ^12.0.0
@@ -32,6 +34,7 @@ specifiers:
   typescript: ^3.9.10
 
 dependencies:
+  '@koa/cors': 3.3.0
   '@types/glob': 7.2.0
   '@types/koa-compose': 3.2.5
   dotenv: 8.6.0
@@ -45,6 +48,7 @@ devDependencies:
   '@types/koa': 2.13.4
   '@types/koa-bodyparser': 4.3.7
   '@types/koa-router': 7.4.4
+  '@types/koa__cors': 3.3.0
   '@types/log4js': 2.3.5
   '@types/mysql': 2.15.21
   '@types/node': 12.20.47
@@ -97,6 +101,13 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@koa/cors/3.3.0:
+    resolution: {integrity: sha512-lzlkqLlL5Ond8jb6JLnVVDmD2OPym0r5kvZlMgAWiS9xle+Q5ulw1T358oW+RVguxUkANquZQz82i/STIRmsqQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      vary: 1.1.2
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -310,6 +321,12 @@ packages:
       '@types/keygrip': 1.0.2
       '@types/koa-compose': 3.2.5
       '@types/node': 12.20.47
+
+  /@types/koa__cors/3.3.0:
+    resolution: {integrity: sha512-FUN8YxcBakIs+walVe3+HcNP+Bxd0SB8BJHBWkglZ5C1XQWljlKcEFDG/dPiCIqwVCUbc5X0nYDlH62uEhdHMA==}
+    dependencies:
+      '@types/koa': 2.13.4
+    dev: true
 
   /@types/log4js/2.3.5:
     resolution: {integrity: sha512-SwF8LkSHqHy9A8GQ67NAYJiGl8zzP4Qtx65Wa+IOxDGdMHxKeoQZjg7m2M1erIT6VK0DYHpu2aTbdLkdkuMHjw==}

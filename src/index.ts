@@ -1,9 +1,13 @@
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import { PORT } from './config';
+import cors from '@koa/cors';
 import routers from './routers/index';
-const app = new Koa();
+import ResponseData from './middleware/ResponseData';
 
+const app = new Koa();
+app.use(ResponseData);
+app.use(cors());
 app.use(bodyParser());
 app.use(routers());
 app.listen(PORT);
