@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import mysql from 'mysql';
 import { DB_USER, DB_HOST, DB_PASSWORD, DB_DATABASE } from '@/config';
 // 创建数据池
@@ -8,17 +9,17 @@ const db = mysql.createPool({
   database: DB_DATABASE,
 });
 // 查询
-export const query = function (sql: string) {
+export const query = function (sql: string, params?: any): Promise<any> {
   return new Promise((resolve, reject) => {
     db.getConnection(function (err, connection) {
       if (err) {
         reject(err);
       } else {
-        connection.query(sql, (err, rows) => {
+        connection.query(sql, params, (err, results, files) => {
           if (err) {
             reject(err);
           } else {
-            resolve(rows);
+            resolve(results);
           }
           connection.release();
         });

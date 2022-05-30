@@ -5,10 +5,10 @@ export default async (ctx: Context, next: Next) => {
     ctx.body = { code, message, errMsg: '服务器出错,错误信息：' + errMsg, data };
   };
   ctx.notFound = (data = {}, message = '') => {
-    ctx.body = { code: 404, message, data };
+    ctx.body = { code: 1, message, data };
   };
   ctx.success = (data = {}, message = 'ok') => {
-    ctx.body = { code: 200, message, data };
+    ctx.body = { code: 0, message, data };
   };
   await next();
 };
